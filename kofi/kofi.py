@@ -56,7 +56,6 @@ class Kofi(commands.Cog):
         if not gist_id:
             return await ctx.send("No GitHub Gist ID provided.")
 
-        
         gist_url = f"https://gist.githubusercontent.com/raidensakura/{gist_id}/raw/kofi.json"
         kofi_url = "https://ko-fi.com/raidensakura"
 
