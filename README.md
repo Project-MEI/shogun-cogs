@@ -32,7 +32,7 @@
  </thead>
  
  <tr>
-  <td><a href="https://github.com/raidensakura/raiden-cogs/tree/main/kofi">kofi</a></td>
+  <td><a href="https://github.com/Project-MEI/shogun-cogs/tree/main/kofi">kofi</a></td>
   <td>A cog to fetch my Ko-fi donation list from GitHub Gist and display it in a nice embed. The list is updated via an external API.</td>
  </tr>
  
