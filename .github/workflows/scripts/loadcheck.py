@@ -31,9 +31,7 @@ proc = subprocess.Popen(
 # let Red boot up
 time.sleep(10)
 
-cogs = [
-    "kofi"
-]
+cogs = ["kofi"]
 
 
 async def leswebsockets() -> Tuple[Dict[str, Any], Dict[str, Any]]:
