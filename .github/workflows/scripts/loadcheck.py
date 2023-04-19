@@ -32,10 +32,7 @@ proc = subprocess.Popen(
 time.sleep(10)
 
 cogs = [
-    "choose",
-    "genshinutils",
-    "longcat",
-    "throw",
+    "kofi"
 ]
 
 

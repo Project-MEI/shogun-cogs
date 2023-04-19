@@ -14,7 +14,7 @@ jobs:
         red-version:
           # this workflow required pr #5453 commit d27dbde, which is in dev & pypi 3.4.15+
           - "git+https://github.com/Cog-Creators/Red-DiscordBot@V3/develop#egg=Red-DiscordBot"
-          - "Red-DiscordBot==3.4.16"
+          - "Red-DiscordBot==3.4.18"
         include:
           - red-version: "git+https://github.com/Cog-Creators/Red-DiscordBot@V3/develop#egg=Red-DiscordBot"
             friendly-red: "Red (dev version)"
