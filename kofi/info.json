@@ -1,0 +1,19 @@
+{
+    "author": [
+        "raidensakura"
+    ],
+    "description": "A cog to list all of my Kofi donators.",
+    "disabled": false,
+    "end_user_data_statement": "This cog does not persistently store any data about users.",
+    "hidden": false,
+    "install_msg": "This cog is mostly made for Shogun. This probably has no use for you.",
+    "min_bot_version": "3.4.12",
+    "name": "Kofi",
+    "required_cogs": {},
+    "requirements": [],
+    "short": "raidensakura's Kofi donation cog.",
+    "tags": [
+        "kofi"
+    ],
+    "type": "COG"
+}
