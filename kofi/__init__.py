@@ -10,4 +10,8 @@ with open(Path(__file__).parent / "info.json") as fp:
 
 
 async def setup(bot: Red):
-    await bot.add_cog(Kofi(bot))
+    cog = Kofi(bot)
+
+    r = bot.add_cog(cog)
+    if r is not None:
+        await r
