@@ -41,7 +41,7 @@
 <h2 align="center">Dev Stuff</h2>
 
 <h3 align="center">Formatting</h3>
-<p align="center">For manual formatting, this repo uses these three:</p>
+<p align="center">For manual formatting, this repo uses these:</p>
 
 ```py
 pip install .[dev]
@@ -59,8 +59,6 @@ pre-commit install
 
 <p align="center">
  <ul>
-  <li><a href="https://github.com/o-wo">ow0x</a> for their Roleplay cog</li>
-  <li><a href="https://github.com/Aioxas">Aioxas</a> for their Longcat cog</li>
   <li><a href="https://github.com/Vexed01/Vex-Cogs">Vexed</a> for their workflow steps and pre-commit hooks</li>
   <li><a href="https://discord.red">Cog-Creators Community</a> for Red Bot and its documentation</li>
  </ul>
