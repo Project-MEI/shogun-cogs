@@ -8,6 +8,9 @@ authors = [
 ]
 license = {file = "LICENSE"}
 requires-python = ">=3.8"
+dependencies = [
+	"python-dotenv"
+]
 
 [project.urls]
 "Issue Tracker" = "https://github.com/Project-MEI/shogun-cogs/issues"
@@ -18,8 +21,7 @@ dev = [
     "black",
     "ruff",
 	"tox",
-	"pre-commit",
-	"python-dotenv"
+	"pre-commit"
 ]
 
 [tool.black]

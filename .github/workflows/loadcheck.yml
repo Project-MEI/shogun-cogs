@@ -45,7 +45,7 @@ jobs:
           source .venv/bin/activate
           pip install setuptools wheel
           pip install ${{ matrix.red-version }}
-          pip install .[dev]
+          pip install .
           pip install jsonrpc-websocket
       - name: Prepare files
         run: |
