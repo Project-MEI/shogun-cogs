@@ -44,15 +44,14 @@
 <p align="center">For manual formatting, this repo uses these three:</p>
 
 ```py
-pip install -U black isort flake8
-black . ; isort . ; flake8 .
+pip install .[dev]
+black . ; ruff .
 ```
 
 <h3 align="center">Pre-commit hooks</h3>
 <p align="center">Optional but it keeps manual formatting work away from you.</p>
 
 ```py
-pip install pre-commit
 pre-commit install
 ```
 
