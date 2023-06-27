@@ -44,8 +44,8 @@ class Kofi(commands.Cog):
         return
 
     @commands.cooldown(1, 5, commands.BucketType.user)
-    @commands.command(aliases=["supporters", "supporter"])
-    async def kofi(self, ctx, gist_id: Union[str, None]):
+    @commands.hybrid_command(aliases=["kofi", "supporter"])
+    async def supporters(self, ctx, gist_id: Union[str, None]):
         """Display a list of Kofi supporters from GitHub Gist."""
 
         # Set Gist ID
