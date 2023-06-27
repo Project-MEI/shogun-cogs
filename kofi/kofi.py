@@ -6,6 +6,7 @@ import aiohttp
 from discord import Embed
 from redbot.core import Config, commands
 from redbot.core.bot import Red
+from redbot.core.utils.views import SimpleMenu
 
 log = logging.getLogger("red.raidensakura.kofi")
 
@@ -67,40 +68,48 @@ class Kofi(commands.Cog):
                     return await ctx.send(f"Error fetching gist: `Code {resp.status}`")
                 data = await resp.json(content_type=None)
 
-                desc = f"Our list of supporters who donated on [Ko-fi]({kofi_url})."
-                url = "https://project-mei.xyz"
-                thumbnail_url = "https://media.discordapp.net/stickers/1098094222432800909.png"
+        desc = f"Our list of supporters who donated on [Ko-fi]({kofi_url})."
+        url = "https://project-mei.xyz"
+        thumbnail_url = "https://project-mei.xyz/images/logo.png"
 
-                # Init embed
-                e = Embed(
-                    title="Shogun's Supporters",
-                    description=desc,
-                    color=15844367,
-                    url=url,
+        pages = []
+        paginator = 10
+        data = [data[i:i+paginator] for i in range(0, len(data), paginator)]
+
+        # Add fields
+        for pagenum, page in enumerate(data):
+
+            # Init embed
+            e = Embed(
+                title="Shogun's Supporters",
+                description=desc,
+                color=15844367,
+                url=url,
+            )
+            e.set_thumbnail(url=thumbnail_url)
+            e.set_footer(
+                text=f"Page {pagenum+1} of {len(list(data))} | Thanks for supporting Shogun!",
+                icon_url="https://avatars.githubusercontent.com/u/120461773?s=64&v=4",
+            )
+
+            for num, supporter in enumerate(page):
+                if supporter.get("is_public"):
+                    name = f"{num+1}. {supporter.get('from_name')}"
+                else:
+                    name = f"{num+1} A kind hearted stranger"
+                amount = supporter.get("amount")
+                currency = supporter.get("currency")
+                msg = supporter.get("message")
+                timestamp_str = supporter.get("timestamp")
+                dt = datetime.datetime.fromisoformat(timestamp_str[:-1])
+                discord_ts = int(dt.timestamp())
+
+                e.add_field(
+                    name=f"{name} ({currency} {amount})",
+                    value=f"<t:{int(discord_ts)}:R>: {msg or 'No message included.'}",
+                    inline=False,
                 )
-                e.set_thumbnail(url=thumbnail_url)
-                e.set_footer(
-                    text="Thank you very much for supporting Shogun!",
-                    icon_url="https://avatars.githubusercontent.com/u/120461773?s=64&v=4",
-                )
 
-                # Add fields
-                for supporter in data:
-                    if supporter.get("is_public"):
-                        name = supporter.get("from_name")
-                    else:
-                        name = "A kind hearted stranger"
-                    amount = supporter.get("amount")
-                    currency = supporter.get("currency")
-                    msg = supporter.get("message")
-                    timestamp_str = supporter.get("timestamp")
-                    dt = datetime.datetime.fromisoformat(timestamp_str[:-1])
-                    discord_ts = int(dt.timestamp())
+            pages.append(e)
 
-                    e.add_field(
-                        name=f"{name} ({currency} {amount})",
-                        value=f"<t:{int(discord_ts)}:R>: {msg}",
-                        inline=False,
-                    )
-
-                return await ctx.send(embed=e)
+        return await SimpleMenu(pages).start(ctx)
