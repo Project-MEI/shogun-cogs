@@ -73,12 +73,11 @@ class Kofi(commands.Cog):
         thumbnail_url = "https://project-mei.xyz/images/logo.png"
 
         pages = []
-        paginator = 10
-        data = [data[i:i+paginator] for i in range(0, len(data), paginator)]
+        paginator = 8
+        data = [data[i : i + paginator] for i in range(0, len(data), paginator)]
 
         # Add fields
         for pagenum, page in enumerate(data):
-
             # Init embed
             e = Embed(
                 title="Shogun's Supporters",
