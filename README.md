@@ -1,5 +1,5 @@
 <a name="readme-top"></a>
-<h1 align="center"><img src="https://files.catbox.moe/nkw5vl.png"><img src="https://img.icons8.com/cotton/512/settings.png" style="height: 70px;"></h1>
+<h1 align="center"><img src="https://files.catbox.moe/nkw5vl.png"><img src="https://files.catbox.moe/k7viho.png"></h1>
 <div align="center">
  <a href="https://github.com/raidensakura"><img src="https://img.shields.io/badge/shogun--cogs-by%20Raiden-d11df9"></a>
  <a href="https://github.com/Cog-Creators/Red-DiscordBot"><img src="https://img.shields.io/badge/Red%20DiscordBot-V3-red.svg"></a>
